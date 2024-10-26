@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 12:49:18 by hdargui           #+#    #+#             */
-/*   Updated: 2024/10/26 10:03:46 by hdargui          ###   ########.fr       */
+/*   Created: 2024/10/26 12:04:42 by hdargui           #+#    #+#             */
+/*   Updated: 2024/10/26 12:43:21 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 size_t	ft_strlen(const char *s)
 {
 	unsigned int	i;
@@ -19,29 +22,28 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
-{
-    unsigned int i=0;
-    unsigned lensrc=ft_strlen(src);
-    unsigned lendst=ft_strlen(dst);
-    
-    if(dstsize <=lendst)
-    {
-        return (dstsize + lensrc)
-    }
-    while(src[i] && lendst + 1 < dstsize -1)
-    {
-        dst[lendst+i]=src[i];
-        i++;
-    }
-    dst[lendst+i]='\0';
-    return(lendst);
-    
+ void * ft_memcpy(void * dst, const void * src, size_t n)
+ {
+     size_t i;
+    unsigned char *dest = (unsigned char *)dst;
+    unsigned char *sc = (unsigned char *)src;
+   unsigned lensrc=ft_strlen(src);
+   i=0;
+  if(n > 0)
+  {
+        while (sc[i]!='\0' && i <= n-1)
+        {
+            dest[i] = sc[i];
+            i++;
+        }
+  } 
+  dest[i]='\0';
+  return dest;
 }
 int main()
 {
     char src[]="hayat";
     char dest[0];
-    printf("%lu\n",ft_strlcpy(dest,src,0));
-    printf("%s",dest);
+    printf("%s\n",memcpy(dest,src,0));
+    printf("%s\n",ft_memcpy(dest,src,0));
 }

@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:04:08 by hdargui           #+#    #+#             */
-/*   Updated: 2024/10/26 10:04:09 by hdargui          ###   ########.fr       */
+/*   Created: 2024/10/26 10:03:17 by hdargui           #+#    #+#             */
+/*   Updated: 2024/10/26 10:23:16 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
+#include <string.h>
 #include <stdio.h>
-int ft_toupper(int c)
+ void * ft_memchr(const void *s, int c, size_t n)
 {
-    while (c >= 'a' && c <= 'z')
+    int i ;
+    unsigned char *ptr = (unsigned char *)s;
+    i =0;
+    while (ptr[i]!='\0' && i < n)
     {
-        c -=32;
+        if (ptr[i]== (char) c)
+            return (char *)(ptr + i);
+        i++;
     }
-    return c;
+    return NULL;
+}
+int main() {
+    const char *s = "hayat";
+    char c = 'a';
+    printf("%s || %s",ft_memchr(s,c,5),memchr(s,c,5));
+    return 0;
 }

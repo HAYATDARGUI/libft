@@ -6,7 +6,7 @@
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:18:26 by hdargui           #+#    #+#             */
-/*   Updated: 2024/10/24 13:06:52 by hdargui          ###   ########.fr       */
+/*   Updated: 2024/10/26 12:02:51 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
     size_t len_hay = ft_strlen(haystack);
     size_t len_needle= ft_strlen(needle);
     i=0;
-    if(*needle =='\0')
+    if(haystack == NULL || needle == NULL)
+    {
+        return NULL;
+    }
+     if(*needle =='\0')
     {
         return (char *)haystack;
     }
@@ -43,12 +47,13 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
        }
        i++;
     }
+    
     return NULL;
 }
-// int main()
-// {
-//     char ch[]="hello hayat";
-//    char n[]="say";
-//     size_t l=12;
-//     printf("%s || %s",strnstr(ch,n,l),ft_strnstr(ch,n,l));
-// }
+int main()
+{
+    char ch[]="hayat";
+   char n[]="";
+    size_t l=12;
+    printf("%s",strnstr(NULL,n,l));
+}

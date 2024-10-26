@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 09:44:03 by mguerraf          #+#    #+#             */
-/*   Updated: 2024/10/26 10:03:35 by hdargui          ###   ########.fr       */
+/*   Created: 2024/10/26 10:33:37 by hdargui           #+#    #+#             */
+/*   Updated: 2024/10/26 10:46:13 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+void * memset(void *b, int c, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+    unsigned char *ptr = (unsigned char *)b;
+    while (len > 0) {
+        *ptr = (char)c;
+        ptr++;
+        len--;
+    }
 }
-// #include <stdio.h>
-// int main()
-// {
-//     printf("%d", ft_isdigit('4'));
-// }
