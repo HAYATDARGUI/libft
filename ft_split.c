@@ -80,20 +80,12 @@ char **ft_split(char const *s, char c)
 
 //     return 0;
 // } 
-int main() {
-    char str[] = "hayat dargui hello world";
-    char **result = ft_split(str, ' ');
+// int main() {
+//     char str[] = "hayat dargui hello world";
+//     char **result = ft_split(str, ' ');
 
-    // طباعة النتائج
-    for (int i = 0; result[i] != NULL; i++) {
-        printf("%s\n", result[i]); // طباعة كل كلمة
-    }
-
-    // ملاحظة: تم تعليق عملية تحرير الذاكرة هنا، لذا يجب أن تقوم بتحريرها لاحقاً بعد اختبار البرنامج.
-    // for (int i = 0; result[i] != NULL; i++) {
-    //     free(result[i]); // حرر الذاكرة المخصصة للكلمة
-    // }
-    // free(result); // حرر الذاكرة المخصصة للمصفوفة
-
-    return 0;
-}
+//     for (int i = 0; result[i] != NULL; i++) {
+//         printf("%s\n", result[i]);
+//     }
+//     return 0;
+// }
