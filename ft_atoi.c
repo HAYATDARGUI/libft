@@ -1,36 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 12:08:57 by mguerraf          #+#    #+#             */
-/*   Updated: 2024/10/26 10:11:23 by hdargui          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	signe;
-	int	result;
+	unsigned long long	res;
+	int					sign;
 
-	i = 0;
-	signe = 1;
-	result = 0;
-	if (str[i] == '+' || str[i] == '-')
+	res = 0;
+	sign = 1;
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (str[i] == '-')
-			signe = -1;
-		i++;
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*nptr && ft_isdigit(*nptr))
 	{
-		result = result * 10 + str[i] - '0';
-		i++;
+		res = (res * 10) + (*nptr - '0');
+		if (res > LLONG_MAX && sign == 1)
+			return (-1);
+		if (res > LLONG_MAX && sign == -1)
+			return (0);
+		nptr++;
 	}
-	return (signe * result);
+	return (res * sign);
 }
 // #include <stdio.h>
 // #include <stdlib.h>
