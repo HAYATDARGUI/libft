@@ -10,15 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
-{
-	unsigned int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
 {
     unsigned int i=0;
@@ -27,7 +20,7 @@ size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
     
     if(dstsize <=lendst)
     {
-        return (dstsize + lensrc)
+        return (dstsize + lensrc);
     }
     while(src[i] && lendst + 1 < dstsize -1)
     {
@@ -38,10 +31,10 @@ size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
     return(lendst);
     
 }
-int main()
-{
-    char src[]="hayat";
-    char dest[0];
-    printf("%lu\n",ft_strlcpy(dest,src,0));
-    printf("%s",dest);
-}
+// int main()
+// {
+//     char src[]="hayat";
+//     char dest[0];
+//     printf("%lu\n",ft_strlcpy(dest,src,0));
+//     printf("%s",dest);
+// }

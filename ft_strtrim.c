@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 15:44:57 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/05 15:44:57 by hdargui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 char *ft_strtrim(char const *s1, char const *set)
 {
     int i =0;
@@ -30,12 +40,12 @@ char *ft_strtrim(char const *s1, char const *set)
     result[t]='\0';
     return result;
 }
-int main() {
-    char str1[] = "   Hello!   ";
-    char set[] = " "; 
+// int main() {
+//     char str1[] = "   Hello!   ";
+//     char set[] = " "; 
 
-    char *trimmed_str = ft_strtrim(str1, set);
+//     char *trimmed_str = ft_strtrim(str1, set);
 
-    printf("%s\n", trimmed_str);
+//     printf("%s\n", trimmed_str);
 
-}
+// }

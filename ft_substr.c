@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 15:45:05 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/05 15:45:05 by hdargui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+
+#include "libft.h"
 char *ft_substr(char const *s, unsigned int start,size_t len)
 {
-    int i =0;
+    size_t i ;
     unsigned int slen =strlen(s);
     char * result;
+
+    i=0;
     result =malloc(sizeof(char)*(len +1));
     if (result==NULL)
     {
@@ -22,18 +34,11 @@ char *ft_substr(char const *s, unsigned int start,size_t len)
         result[0] = '\0'; 
         return result;
     }
-    while (s[i] && s[i+start] && i< len)
+    while (s[i] && s[i+start] && i < len)
     {
         result[i] =s[i+start];
         i++;
     }
     result[i] ='\0';
     return result;
-}
-
-int main() {
-    char *s = ft_substr("Hello, world!", 7, 5);
-    if (s) {
-        printf("%s\n", s); 
-    } 
 }

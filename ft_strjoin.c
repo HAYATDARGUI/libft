@@ -1,46 +1,56 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
+/*   Created: 2024/11/05 15:41:45 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/05 15:41:45 by hdargui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strjoin(char const *s1, char const *s2)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int i =0;
-    int j=0;
-    int a=strlen(s1);
-    int b=strlen(s2);
-    char * s3;
-    int len = a+b;
-    s3 =malloc(sizeof(char)*(len +1));
-    if (s3==NULL)
+	int i;
+	int j;
+	char *s3;
+
+	i = 0;
+	j = 0;
+	s3 = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (s3 == NULL)
+		return (NULL);
+	while (s1[i] && i < ft_strlen(s1))
     {
-        return NULL;
+        s3[i] = s1[i];
+	    i++;
     }
-    while (s1[i]&&i <a)
+		
+	while (s2[j] && j < ft_strlen(s2))
     {
-        s3[i]=s1[i];
-        i++;
+        s3[i] = s2[j];
+	    i++;
+	    j++;
     }
-    while (s2[j]&& j <b)
-    {
-        s3[i]=s2[j];
-        i++;
-        j++;
-        
-    }
-    s3[i]='\0';
-    return s3;
+		
+	s3[i] = '\0';
+	return (s3);
 }
+
+#include <stdio.h>
  int main(void)
 {
-    char *result = ft_strjoin(NULL, "World!");
+    char *result = ft_strjoin("hello", "World!");
 
     if (result)
     {
         printf("%s\n", result); // Print the result
-    }
-    else
-    {
-        printf("Memory allocation failed!\n");
     }
 
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 char * ft_strchr(const char *s, int c)
 {
     int i ;
@@ -28,11 +28,11 @@ char * ft_strchr(const char *s, int c)
     }
     return NULL;
 }
-#include <ctype.h>
-#include <string.h>
-int main() {
-    const char *s = "hayat";
-    char c = ' ';
-    printf("%s || %s",ft_strchr(s,c),strchr(s,c));
-    return 0;
-}
+// #include <ctype.h>
+// #include <string.h>
+// int main() {
+//     const char *s = "hayat";
+//     char c = ' ';
+//     printf("%s || %s",ft_strchr(s,c),strchr(s,c));
+//     return 0;
+// }

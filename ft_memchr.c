@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
  void * ft_memchr(const void *s, int c, size_t n)
 {
-    int i ;
+    size_t i ;
     unsigned char *ptr = (unsigned char *)s;
     i =0;
     while (ptr[i]!='\0' && i < n)
@@ -26,9 +24,9 @@
     }
     return NULL;
 }
-int main() {
-    const char *s = "hayat";
-    char c = 'a';
-    printf("%s || %s",ft_memchr(s,c,5),memchr(s,c,5));
-    return 0;
-}
+// int main() {
+//     const char *s = "hayat";
+//     char c = 'a';
+//     printf("%s || %s",ft_memchr(s,c,5),memchr(s,c,5));
+//     return 0;
+// }

@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 15:47:04 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/05 15:47:04 by hdargui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 static int count_words(const char *s,char c)
 {
     int count=0;

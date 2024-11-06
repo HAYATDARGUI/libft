@@ -10,16 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-size_t	ft_strlen(const char *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 char * ft_strrchr(const char *s, int c)
 {
     int i = ft_strlen(s);
@@ -34,11 +25,11 @@ char * ft_strrchr(const char *s, int c)
     
     return NULL;
 }
- #include <ctype.h>
-#include <string.h>
-int main() {
-    const char *s = "hayat";
-    char ch = 'a';
-    printf("%s || %s",ft_strrchr(s,ch),strrchr(s,ch));
-    return 0;
-}
+//  #include <ctype.h>
+// #include <string.h>
+// int main() {
+//     const char *s = "hayat";
+//     char ch = 'a';
+//     printf("%s || %s",ft_strrchr(s,ch),strrchr(s,ch));
+//     return 0;
+// }

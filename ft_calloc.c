@@ -10,17 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h> 
-void ft_bzero(void *s, size_t n) {
-    unsigned char *ptr = (unsigned char *)s;
-    while (n > 0) {
-        *ptr = 0;
-        ptr++;
-        n--;
-    }
-}
+#include "libft.h"
+
 void * ft_calloc(size_t count, size_t size)
 {
     unsigned char  *alloctearray=malloc(count * size);
@@ -32,8 +23,8 @@ void * ft_calloc(size_t count, size_t size)
     ft_bzero(alloctearray,count*size);
     return alloctearray;
 }
-int main ()
-{
-    char s[]="hayat";
-    printf("%s",ft_calloc(2,7));
-}
+// int main ()
+// {
+//     char s[]="hayat";
+//     printf("%s",ft_calloc(2,7));
+// }

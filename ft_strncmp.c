@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 12:10:55 by mguerraf          #+#    #+#             */
-/*   Updated: 2024/10/26 10:03:56 by hdargui          ###   ########.fr       */
+/*   Created: 2024/11/05 15:43:15 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/05 15:43:15 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

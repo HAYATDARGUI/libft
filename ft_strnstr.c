@@ -10,17 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-size_t	ft_strlen(const char *s)
-{
-	unsigned int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 char * ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t i;
@@ -29,17 +20,13 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
     size_t len_needle= ft_strlen(needle);
     i=0;
     if(haystack == NULL || needle == NULL)
-    {
         return NULL;
-    }
      if(*needle =='\0')
-    {
         return (char *)haystack;
-    }
-    while( i < len_hay)
+    while(  i < len &&  i < len_hay)
     {
        j=0;
-       while(needle[j] && haystack[i+j]== needle[j])
+       while(needle[j] && haystack[i+j]== needle[j] && (i + j) < len)
        {
             if(j +1 == len_needle)
                 return (char *) haystack + i;
@@ -50,10 +37,10 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
     
     return NULL;
 }
-int main()
-{
-    char ch[]="hayat";
-   char n[]="";
-    size_t l=12;
-    printf("%s",strnstr(NULL,n,l));
-}
+// int main()
+// {
+//     char ch[]="hayat";
+//    char n[]="";
+//     size_t l=12;
+//     printf("%s",strnstr(NULL,n,l));
+// }
