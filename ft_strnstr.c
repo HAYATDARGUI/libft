@@ -18,6 +18,7 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
     size_t j;
     size_t len_hay = ft_strlen(haystack);
     size_t len_needle= ft_strlen(needle);
+
     i=0;
     if(haystack == NULL || needle == NULL)
         return NULL;
@@ -37,10 +38,10 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
     
     return NULL;
 }
-// int main()
-// {
-//     char ch[]="hayat";
-//    char n[]="";
-//     size_t l=12;
-//     printf("%s",strnstr(NULL,n,l));
-// }
+int main()
+{
+    char ch[]="hayat";
+   char n[]="";
+    size_t l=12;
+    printf("%s",strnstr(NULL,n,l));
+}

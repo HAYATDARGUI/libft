@@ -24,9 +24,3 @@
     }
     return NULL;
 }
-// int main() {
-//     const char *s = "hayat";
-//     char c = 'a';
-//     printf("%s || %s",ft_memchr(s,c,5),memchr(s,c,5));
-//     return 0;
-// }

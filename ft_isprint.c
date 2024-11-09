@@ -17,10 +17,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-// #include <stdio.h>
-// #include <ctype.h>
-// int main()
-// {
-//     printf("%d", ft_isprint('\0'));
-//     printf("%d", isprint('\0'));
-// }

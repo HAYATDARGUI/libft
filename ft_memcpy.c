@@ -19,21 +19,19 @@
     unsigned char *sc = (unsigned char *)src;
 
     i=0;
-  if(n > 0)
-  {
-        while (sc[i]!='\0' && i <= n - 1)
-        {
-            dest[i] = sc[i];
-            i++;
-        }
-  } 
+    if(dest==src)
+    {
+      return dest;
+    }
+    if(n > 0)
+    {
+          while (sc[i]!='\0' && i <= n - 1)
+          {
+              dest[i] = sc[i];
+              i++;
+          }
+    } 
   dest[i]='\0';
   return dest;
 }
-// int main()
-// {
-//     char src[]="hayat";
-//     char dest[0];
-//     printf("%s\n",memcpy(dest,src,0));
-//     printf("%s\n",ft_memcpy(dest,src,0));
-// }
+

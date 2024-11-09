@@ -18,7 +18,9 @@ size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
     unsigned lensrc=ft_strlen(src);
     unsigned lendst=ft_strlen(dst);
     
-    if(dstsize <=lendst)
+    if (dst == NULL && size == 0)
+		return (src_len);
+    if(size == 0 || dstsize <=lendst)
     {
         return (dstsize + lensrc);
     }
@@ -29,7 +31,6 @@ size_t ft_strlcat(char *  dst, const char *  src, size_t dstsize)
     }
     dst[lendst+i]='\0';
     return(lendst);
-    
 }
 // int main()
 // {

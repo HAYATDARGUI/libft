@@ -28,16 +28,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
-// #include <stdio.h>
+#include <stdio.h>
+int main() {
 
-
-// int main() {
-//     char buffer[10] = "abcdefg";
-//     printf("Before memmove: %s\n", buffer);
+    char s[20] = "abcdefg";
+	 char d[20] = "";
+    printf("Before memmove: %s\n", s);
     
-//     ft_memmove(buffer + 4, buffer, 4);  
+    ft_memmove(d,s,4);  
     
-//     printf("After memmove: %s\n", buffer); 
+    printf("After memmove: %s\n", s); 
     
-//     return 0;
-// }
+    return 0;
+}

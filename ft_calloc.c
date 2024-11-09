@@ -14,8 +14,16 @@
 
 void * ft_calloc(size_t count, size_t size)
 {
-    unsigned char  *alloctearray=malloc(count * size);
-    
+    unsigned char  *alloctearray;
+    if(count==0 || size==0)
+    {
+        return (malloc(0));
+    }
+    if(count > SIZE_MAX / size)
+    {
+        return (NULL);
+    }
+    alloctearray = malloc(count * size);
     if (alloctearray == NULL)
 	{
 		return NULL;

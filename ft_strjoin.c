@@ -17,8 +17,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 	char *s3;
 
 	i = 0;
@@ -43,14 +43,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s3);
 }
 
-#include <stdio.h>
- int main(void)
-{
-    char *result = ft_strjoin("hello", "World!");
+// #include <stdio.h>
+//  int main(void)
+// {
+//     char *result = ft_strjoin("hello", "World!");
 
-    if (result)
-    {
-        printf("%s\n", result); // Print the result
-    }
+//     if (result)
+//     {
+//         printf("%s\n", result); // Print the result
+//     }
 
-}
+// }
