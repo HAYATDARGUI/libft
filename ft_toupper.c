@@ -2,20 +2,24 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2024/10/26 10:04:08 by hdargui           #+#    #+#             */
 /*   Updated: 2024/10/26 10:04:09 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_toupper(int c)
+
+int	ft_toupper(int c)
 {
-    while (c >= 'a' && c <= 'z')
-    {
-        c -=32;
-    }
-    return c;
+	while (c >= 'a' && c <= 'z')
+	{
+		c -= 32;
+	}
+	return (c);
 }

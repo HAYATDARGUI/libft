@@ -14,27 +14,25 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
+	unsigned char	*a;
+	unsigned char	*b;
 
+	b = (unsigned char *)s2;
+	a = (unsigned char *)s1;
 	i = 0;
-	if (!s1 && !s2)
+	if (!a && !b)
 		return (0);
-	while ((s1[i] != '\0' || s2[i] != '\0') && n > i)
+	while ((a[i] != '\0' || b[i] != '\0') && n > i)
 	{
-		if (s1[i] != s2[i])
+		if (a[i] != b[i])
 		{
-			if (s1[i] > s2[i])
+			if (a[i] > b[i])
 				return (1);
-			else if (s1[i] < s2[i])
+			else if (a[i] < b[i])
 				return (-1);
 		}
 		i++;
 	}
 	return (0);
 }
-
-// #include <string.h>
-// int main()
-// {
-//     printf("%d \n", ft_strncmp("mm","aa",1));
-// }

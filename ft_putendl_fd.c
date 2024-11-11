@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:38:54 by hdargui           #+#    #+#             */
-/*   Updated: 2024/11/05 15:38:54 by hdargui          ###   ########.fr       */
+/*   Created: 2024/11/10 17:45:34 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/10 17:45:34 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd) {
-    if (!s)
-        return;
-
-    while (*s) {
-        write(fd, s, 1);
-        s++;
-    }
-    write(fd, "\n", 1);
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }

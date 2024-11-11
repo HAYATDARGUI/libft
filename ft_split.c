@@ -5,97 +5,91 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:04 by hdargui           #+#    #+#             */
-/*   Updated: 2024/11/05 15:47:04 by hdargui          ###   ########.fr       */
+/*   Created: 2024/11/11 11:37:12 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/11 11:37:12 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static int count_words(const char *s,char c)
+
+static int	count_word(const char *str, char c)
 {
-    int count=0;
-    int i=0;
-    if(s==  NULL)
-        return 0;
-    while (s[i])
-    {
-        while(s[i]==c )
-            i++;
-        if(s[i]!= c && s[i])
-            count++;
-        while (s[i] != c && s[i])
-        {
-            i++;
-        }
-    }
-    return count;
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i])
+	{
+		while (str[i] == c)
+			i++;
+		if (str[i] != c && str[i])
+			count++;
+		while (str[i] != c && str[i])
+		{
+			i++;
+		}
+	}
+	return (count);
 }
-char **ft_split(char const *s, char c)
+
+static int	find_next_word(const char *str, char c, int *start)
 {
-    int i = 0;
-    char **array;
-    int windex=0;
-    
-    array=malloc(sizeof(char*)*(count_words(s,c)+1));
-    if(array==NULL)
-    {
-        return NULL;
-    }
-    if(s[i]=='\0')
-    {
-        return NULL;
-    }
-    while (s[i])
-    {
-        while(s[i]== c)
-        {
-            i++;
-        }
-        if(s[i])
-        {
-            int start = i;
-            while (s[i]!= c && s[i])
-            {
-                i++;
-            }
-            int words_len= i-start+1;
-            array[windex]=malloc(sizeof(char)*(words_len +1 ));
+	size_t	i;
 
-            if (array[windex]==NULL)
-            {
-                return NULL;
-            }
-            int j=0;
-            while (j < words_len )
-             {
-                 array[windex][j]=s[start+j];
-                j++;
-             } 
-             array[windex][words_len] = '\0'; 
-             windex++;
-            
-        }
-    }
-        
-    array[windex]=NULL;
-    return array;
+	i = *start;
+	while (str[i] && str[i] == c)
+		i++;
+	*start = i;
+	while (str[i] && str[i] != c)
+		i++;
+	return (i - *start);
 }
-// int main()
-// {
-//     char *str = "";
-//     char delimiter = ' ';
-//     size_t word_count;
-//     word_count = count_words(NULL, delimiter);
-//     printf("The number of words in the string is: %zu\n", word_count);
 
-//     return 0;
-// } 
-// int main() {
-//     char str[] = "hayat dargui hello world";
-//     char **result = ft_split(str, ' ');
+char	**free_split(char **alloc)
+{
+	int	i;
 
-//     for (int i = 0; result[i] != NULL; i++) {
-//         printf("%s\n", result[i]);
-//     }
-//     return 0;
-// }
+	i = 0;
+	if (alloc)
+	{
+		while (alloc[i])
+		{
+			free(alloc[i]);
+			i++;
+		}
+		free(alloc);
+	}
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		j;
+	int		len;
+	int		start;
+	char	**alloc;
+
+	j = 0;
+	start = 0;
+	if (!s)
+		return (NULL);
+	alloc = malloc((count_word(s, c) + 1) * sizeof(char *));
+	if (!alloc)
+		return (NULL);
+	while (s[start])
+	{
+		len = find_next_word(s, c, &start);
+		if (len > 0)
+		{
+			alloc[j] = ft_substr(s, start, len);
+			if (!alloc[j++])
+				return (free_split(alloc));
+			start += len;
+		}
+	}
+	alloc[j] = NULL;
+	return (alloc);
+}

@@ -5,19 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:39:07 by hdargui           #+#    #+#             */
-/*   Updated: 2024/11/05 15:39:07 by hdargui          ###   ########.fr       */
+/*   Created: 2024/11/10 17:13:15 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/10 17:13:15 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd) {
-    if (!s)
-        return;
-
-    while (*s) {
-        write(fd, s, 1);
-        s++;
-    }
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

@@ -21,8 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-// #include <stdio.h>
-// int main()
-// {
-//     printf("%d", ft_strlen("mariam"));
-// }

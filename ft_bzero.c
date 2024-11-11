@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
+/*                                                    +:+ +:+
 	+:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+      
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+
 	+#+        */
-/*                                                +#+#+#+#+#+  
+/*                                                +#+#+#+#+#+
 	+#+           */
 /*   Created: 2024/11/05 15:26:54 by hdargui           #+#    #+#             */
 /*   Updated: 2024/11/05 15:26:54 by hdargui          ###   ########.fr       */
@@ -17,7 +17,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr = (unsigned char *)s;
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
 	while (n > 0)
 	{
 		*ptr = 0;

@@ -2,20 +2,24 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2024/10/26 10:04:04 by hdargui           #+#    #+#             */
 /*   Updated: 2024/10/26 10:04:05 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_tolower(int c)
+
+int	ft_tolower(int c)
 {
-	while(c >= 'A' && c <= 'Z')
+	while (c >= 'A' && c <= 'Z')
 	{
-		c +=32;
+		c += 32;
 	}
-	return c;
+	return (c);
 }
