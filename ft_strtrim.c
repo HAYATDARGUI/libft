@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 16:57:00 by hdargui           #+#    #+#             */
+/*   Created: 2024/11/01 16:57:00 by hdargui           #+#    #+#             */
 /*   Updated: 2024/11/10 16:57:00 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,11 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		t;
-	int		end;	
-	char	*result;
+	size_t		i;
+	size_t		t;
+	size_t		end;
 
 	i = 0;
 	if (!s1 || !set)
@@ -29,14 +27,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > i && ft_strchr(set, s1[end]))
 		end--;
 	t = end - i + 1;
-	result = malloc(sizeof(char) * (t + 1));
-	if (result == NULL)
-		return (NULL);
-	j = 0;
-	while (j < t)
-	{
-		result[j++] = s1[i + j];
-	}
-	result[t] = '\0';
-	return (result);
+	return (ft_substr(s1, i, t));
 }

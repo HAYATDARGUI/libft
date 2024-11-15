@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2024/11/05 15:45:05 by hdargui           #+#    #+#             */
-/*   Updated: 2024/11/05 15:45:05 by hdargui          ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/01 13:00:31 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/13 13:00:31 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +21,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		len = 0;
-	if (len > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
 		return (NULL);
-	while (s[i] && i < len && s[i + start])
+	while (i < len)
 	{
 		result[i] = s[i + start];
 		i++;

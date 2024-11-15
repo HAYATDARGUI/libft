@@ -29,7 +29,7 @@ $(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 %.o :  %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< 	-o $@
 
 clean :
 	${RM} $(OBJ) $(OBJB)

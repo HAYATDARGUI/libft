@@ -2,60 +2,55 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2024/11/05 15:37:09 by hdargui           #+#    #+#             */
-/*   Updated: 2024/11/05 15:37:09 by hdargui          ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/01 12:54:00 by hdargui           #+#    #+#             */
+/*   Updated: 2024/11/13 12:54:00 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-static size_t	num_length(int n)
+static size_t	nbrlen(int n)
 {
-	size_t len;
+	size_t	size;
 
-	len = 0;
-	if (n <= 0)
-		len++;
-	while (n != 0)
+	size = 0;
+	if (n < 0)
+		size++;
+	while (n)
 	{
 		n /= 10;
-		len++;
+		size++;
 	}
-	return (len);
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t			len;
-	char 			*str;
-	unsigned int	num;
+	size_t	size;
+	char	*res;
 
 	if (n == 0)
 		return (ft_strdup("0"));
 	else if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = num_length(n);
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	size = nbrlen(n);
+	res = (char *)malloc((size + 1) * sizeof(char));
+	if (!res)
 		return (NULL);
 	if (n < 0)
 	{
-		str[0] = '-';
-		num = -n;
+		n = -n;
+		res[0] = '-';
 	}
-	else
-		num = n;
-	str[len--] = '\0';
-	while (num != 0)
+	res[size] = '\0';
+	while (n)
 	{
-		str[len--] = (num % 10) + '0';
-		num /= 10;
+		size--;
+		res[size] = n % 10 + 48;
+		n /= 10;
 	}
-	return (str);
+	return (res);
 }

@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdargui <hdargui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 12:30:43 by hdargui           #+#    #+#             */
+/*   Created: 2024/11/01 12:30:43 by hdargui           #+#    #+#             */
 /*   Updated: 2024/11/11 12:30:43 by hdargui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*alloctearray;
+	void	*alloctearray;
 
 	if (count == 0 || size == 0)
 	{
